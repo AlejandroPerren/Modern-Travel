@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
-import {Poppins} from 'next/font/google'
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
+import Footer from "@/components/Home/Footer/Footer";
+import ScrollToTop from "@/components/Helper/ScrollToTop";
 
 const font = Poppins({
-  weight: ['100','200','300','400','500','600','700','800','900', ],
-  subsets: ['latin']
-})
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -31,11 +33,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${font.className} antialiased`}
-      >
-        <ResponsiveNav/>
+      <body className={`${font.className} antialiased`}>
+        <ResponsiveNav />
         {children}
+        <Footer />
+        <ScrollToTop/>
       </body>
     </html>
   );
